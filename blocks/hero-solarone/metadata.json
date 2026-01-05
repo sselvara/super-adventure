@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-solarone",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-01-05T13:01:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://themes.ainoblocks.io/solarone/",
+    "originPage": "SolarOne homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "homepage-hero",
+    "imagePattern": "side-image"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + button + description + image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections",
+      "landing pages with product images",
+      "marketing pages with call-to-action"
+    ],
+    "notSuitableFor": [
+      "text-only hero sections",
+      "full-width background image heroes"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/solarone/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-05T13:01:00.000Z"
+  }
+}
