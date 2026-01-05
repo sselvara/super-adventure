@@ -1,33 +1,136 @@
+/* Columns SolarOne Block Styles */
+.columns-solarone {
+  padding: var(--spacing-l) 0;
+}
+
 .columns-solarone > div {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-m);
 }
 
-.columns-solarone img {
-  width: 100%;
-}
-
+/* Individual column */
 .columns-solarone > div > div {
-  order: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
+/* Icon/image in column */
+.columns-solarone img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Feature icon columns - small icons */
+.columns-solarone > div > div > p:first-child img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* Text below icons */
+.columns-solarone > div > div > p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+/* For icon + text pattern - center aligned */
+.columns-solarone.icon-columns > div {
+  text-align: center;
+  justify-content: center;
+}
+
+.columns-solarone.icon-columns > div > div {
+  align-items: center;
+}
+
+/* For feature columns - text | image layout */
 .columns-solarone > div > .columns-solarone-img-col {
   order: 0;
 }
 
 .columns-solarone > div > .columns-solarone-img-col img {
   display: block;
+  border-radius: var(--border-radius-m);
+  width: 100%;
 }
 
-@media (width >= 900px) {
+/* Eyebrow in feature columns */
+.columns-solarone > div > div > p:first-child:not(:has(img)) {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+}
+
+/* Heading in feature columns */
+.columns-solarone h2,
+.columns-solarone h3 {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: var(--heading-font-size-l);
+  color: var(--heading-color);
+}
+
+/* Description text */
+.columns-solarone > div > div > p:has(+ a) {
+  color: var(--text-color);
+  margin-bottom: var(--spacing-s);
+}
+
+/* CTA buttons in columns */
+.columns-solarone a.button {
+  align-self: flex-start;
+}
+
+/* Partner logos variant */
+.columns-solarone.logos > div {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-l);
+}
+
+.columns-solarone.logos > div > div {
+  flex: 0 0 auto;
+}
+
+.columns-solarone.logos img {
+  max-width: 120px;
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.columns-solarone.logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@media (width >= 600px) {
   .columns-solarone > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-direction: row;
   }
 
   .columns-solarone > div > div {
     flex: 1;
-    order: unset;
+  }
+}
+
+@media (width >= 900px) {
+  .columns-solarone {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .columns-solarone > div {
+    align-items: center;
+    gap: var(--spacing-xl);
+  }
+
+  .columns-solarone h2 {
+    font-size: var(--heading-font-size-xl);
   }
 }

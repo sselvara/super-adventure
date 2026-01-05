@@ -1,3 +1,8 @@
+/* Hero SolarOne Block Styles */
+.hero-solarone-container {
+  background-color: var(--background-color);
+}
+
 .hero-solarone-container .hero-solarone-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,33 +10,96 @@
 
 .hero-solarone {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: var(--spacing-xl) var(--spacing-s);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Two column layout */
+.hero-solarone > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+  align-items: center;
+}
+
+/* Text column */
+.hero-solarone > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Eyebrow text */
+.hero-solarone > div > div:first-child > p:first-child {
+  color: var(--accent-color);
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Main heading */
 .hero-solarone h1,
 .hero-solarone h2 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--heading-color);
+  margin: 0 0 var(--spacing-s) 0;
+}
+
+/* CTA and description container */
+.hero-solarone > div > div:first-child > p:last-of-type {
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  margin: var(--spacing-xs) 0 0 0;
+  max-width: 400px;
+}
+
+/* CTA button */
+.hero-solarone a.button {
+  margin: var(--spacing-s) 0;
+  display: inline-block;
+}
+
+/* Image column */
+.hero-solarone > div > div:last-child {
+  flex-shrink: 0;
 }
 
 .hero-solarone picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  display: block;
+  line-height: 0;
 }
 
 .hero-solarone img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-m);
 }
 
 @media (width >= 900px) {
   .hero-solarone {
-    padding: 40px 32px;
+    padding: var(--spacing-xxl) var(--spacing-m);
+  }
+
+  .hero-solarone > div {
+    flex-direction: row;
+    gap: var(--spacing-xl);
+  }
+
+  .hero-solarone > div > div:first-child {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .hero-solarone > div > div:last-child {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .hero-solarone h1,
+  .hero-solarone h2 {
+    font-size: var(--heading-font-size-xxl);
   }
 }
