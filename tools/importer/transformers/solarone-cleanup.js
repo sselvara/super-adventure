@@ -13,34 +13,34 @@
 
 const TransformHook = {
   beforeTransform: 'beforeTransform',
-  afterTransform: 'afterTransform'
+  afterTransform: 'afterTransform',
 };
 
-export default function transform(hookName, element, payload) {
+export default function transform(hookName, element, _payload) {
   if (hookName === TransformHook.beforeTransform) {
     // Remove header and navigation
     // EXTRACTED: Found header.wp-block-template-part in captured DOM
     WebImporter.DOMUtils.remove(element, [
       'header.wp-block-template-part',
-      '.wp-block-navigation'
+      '.wp-block-navigation',
     ]);
 
     // Remove footer
     // EXTRACTED: Found footer.wp-block-template-part in captured DOM
     WebImporter.DOMUtils.remove(element, [
-      'footer.wp-block-template-part'
+      'footer.wp-block-template-part',
     ]);
 
     // Remove skip link
     // EXTRACTED: Found a.skip-link.screen-reader-text in captured DOM
     WebImporter.DOMUtils.remove(element, [
-      '.skip-link'
+      '.skip-link',
     ]);
 
     // Remove mobile-only and hidden elements
     // EXTRACTED: Found elements with mobile-hide, tablet-hide classes in captured DOM
     WebImporter.DOMUtils.remove(element, [
-      '.mobile-hide.tablet-hide.desktop-show'
+      '.mobile-hide.tablet-hide.desktop-show',
     ]);
   }
 
@@ -49,11 +49,11 @@ export default function transform(hookName, element, payload) {
     WebImporter.DOMUtils.remove(element, [
       'noscript',
       'link',
-      'style'
+      'style',
     ]);
 
     // Remove empty WordPress group wrappers
     const emptyGroups = element.querySelectorAll('.wp-block-group:empty');
-    emptyGroups.forEach(group => group.remove());
+    emptyGroups.forEach((group) => group.remove());
   }
 }

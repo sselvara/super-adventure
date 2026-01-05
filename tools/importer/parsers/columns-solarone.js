@@ -56,7 +56,7 @@ export default function parse(element, { document }) {
   // Build cells - one row with columns based on grid items
   const columns = [];
 
-  gridItems.forEach(item => {
+  gridItems.forEach((item) => {
     const columnContent = [];
 
     // Check for flexbox pattern (icon + text)
@@ -66,9 +66,8 @@ export default function parse(element, { document }) {
       const text = flexbox.querySelector('p');
       if (icon) columnContent.push(icon.cloneNode(true));
       if (text) columnContent.push(text.cloneNode(true));
-    }
-    // Check for group pattern (feature text content)
-    else if (item.querySelector('.wp-block-group')) {
+    } else if (item.querySelector('.wp-block-group')) {
+      // Check for group pattern (feature text content)
       const group = item.querySelector('.wp-block-group');
 
       const eyebrow = group.querySelector('.has-accent-primary-color');
@@ -79,15 +78,13 @@ export default function parse(element, { document }) {
       if (eyebrow) columnContent.push(eyebrow.cloneNode(true));
       if (heading) columnContent.push(heading.cloneNode(true));
       if (desc) columnContent.push(desc.cloneNode(true));
-      buttons.forEach(btn => columnContent.push(btn.cloneNode(true)));
-    }
-    // Check for image-only pattern (logo or feature image)
-    else if (item.querySelector('.wp-block-image, figure')) {
+      buttons.forEach((btn) => columnContent.push(btn.cloneNode(true)));
+    } else if (item.querySelector('.wp-block-image, figure')) {
+      // Check for image-only pattern (logo or feature image)
       const img = item.querySelector('.wp-block-image img, figure img');
       if (img) columnContent.push(img.cloneNode(true));
-    }
-    // Check for direct text content
-    else {
+    } else {
+      // Check for direct text content
       const text = item.querySelector('p, h2, h3');
       if (text) columnContent.push(text.cloneNode(true));
     }

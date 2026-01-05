@@ -30,30 +30,30 @@
  */
 export default function parse(element, { document }) {
   // Extract eyebrow text
-  const eyebrow = element.querySelector('.has-accent-primary-color') ||
-                  element.querySelector('p:first-of-type');
+  const eyebrow = element.querySelector('.has-accent-primary-color')
+                  || element.querySelector('p:first-of-type');
 
   // Extract heading
-  const heading = element.querySelector('h2.wp-block-heading') ||
-                  element.querySelector('h2') ||
-                  element.querySelector('h1');
+  const heading = element.querySelector('h2.wp-block-heading')
+                  || element.querySelector('h2')
+                  || element.querySelector('h1');
 
   // Extract CTA button
-  const ctaButton = element.querySelector('.wp-block-ainoblocks-button a') ||
-                    element.querySelector('a.wp-block-ainoblocks-button__link');
+  const ctaButton = element.querySelector('.wp-block-ainoblocks-button a')
+                    || element.querySelector('a.wp-block-ainoblocks-button__link');
 
   // Extract description text (in flexbox container)
   const flexbox = element.querySelector('.wp-block-ainoblocks-flexbox');
   let description = null;
   if (flexbox) {
-    const descP = flexbox.querySelector('p.has-font-secondary-color') ||
-                  flexbox.querySelector('p:last-of-type');
+    const descP = flexbox.querySelector('p.has-font-secondary-color')
+                  || flexbox.querySelector('p:last-of-type');
     if (descP) description = descP;
   }
 
   // Extract hero image
-  const heroImage = element.querySelector('.wp-block-image img') ||
-                    element.querySelector('figure img');
+  const heroImage = element.querySelector('.wp-block-image img')
+                    || element.querySelector('figure img');
 
   // Build cells array - two column layout
   const leftCell = [];
@@ -66,7 +66,7 @@ export default function parse(element, { document }) {
   if (heroImage) rightCell.push(heroImage.cloneNode(true));
 
   const cells = [
-    [leftCell, rightCell]
+    [leftCell, rightCell],
   ];
 
   // Create block using WebImporter utility

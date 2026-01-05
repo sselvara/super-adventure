@@ -41,36 +41,35 @@ export default function parse(element, { document }) {
   const cells = [];
 
   // Check for testimonial card pattern
-  if (element.classList.contains('wp-block-ainoblocks-testimonial') ||
-      element.querySelector('.wp-block-ainoblocks-testimonial')) {
-
+  if (element.classList.contains('wp-block-ainoblocks-testimonial')
+      || element.querySelector('.wp-block-ainoblocks-testimonial')) {
     const testimonial = element.classList.contains('wp-block-ainoblocks-testimonial')
       ? element
       : element.querySelector('.wp-block-ainoblocks-testimonial');
 
     // Extract avatar
-    const avatar = testimonial.querySelector('.wp-block-ainoblocks-flexbox figure img') ||
-                   testimonial.querySelector('.wp-block-ainoblocks-flexbox img');
+    const avatar = testimonial.querySelector('.wp-block-ainoblocks-flexbox figure img')
+                   || testimonial.querySelector('.wp-block-ainoblocks-flexbox img');
 
     // Extract testimonial text (skip the quote icon paragraph)
     const textParagraphs = testimonial.querySelectorAll('.wp-block-ainoblocks-card > p');
     let testimonialText = null;
-    textParagraphs.forEach(p => {
+    textParagraphs.forEach((p) => {
       if (p.textContent && p.textContent.trim().length > 20) {
         testimonialText = p;
       }
     });
 
     // Extract author info
-    const authorContainer = testimonial.querySelector('.wp-block-ainoblocks-flexbox .wp-block-group') ||
-                           testimonial.querySelector('.wp-block-ainoblocks-flexbox > div:last-child');
+    const authorContainer = testimonial.querySelector('.wp-block-ainoblocks-flexbox .wp-block-group')
+                           || testimonial.querySelector('.wp-block-ainoblocks-flexbox > div:last-child');
     let authorName = null;
     let authorRole = null;
 
     if (authorContainer) {
       const authorPs = authorContainer.querySelectorAll('p');
-      if (authorPs.length >= 1) authorName = authorPs[0];
-      if (authorPs.length >= 2) authorRole = authorPs[1];
+      if (authorPs.length >= 1) [authorName] = authorPs;
+      if (authorPs.length >= 2) [, authorRole] = authorPs;
     }
 
     // Build card row
@@ -83,31 +82,28 @@ export default function parse(element, { document }) {
     if (authorRole) contentCell.push(authorRole.cloneNode(true));
 
     cells.push([imageCell, contentCell]);
-  }
-  // Check for blog post card pattern
-  else if (element.classList.contains('wp-block-post') ||
-           element.querySelector('.wp-block-post')) {
-
+  } else if (element.classList.contains('wp-block-post')
+           || element.querySelector('.wp-block-post')) {
     const posts = element.classList.contains('wp-block-post')
       ? [element]
       : element.querySelectorAll('.wp-block-post');
 
-    posts.forEach(post => {
+    posts.forEach((post) => {
       // Extract featured image
-      const featuredImage = post.querySelector('.wp-block-post-featured-image img') ||
-                           post.querySelector('figure img');
+      const featuredImage = post.querySelector('.wp-block-post-featured-image img')
+                           || post.querySelector('figure img');
 
       // Extract categories/terms
       const terms = post.querySelector('.wp-block-post-terms');
 
       // Extract title
-      const title = post.querySelector('.wp-block-post-title a') ||
-                   post.querySelector('.wp-block-post-title') ||
-                   post.querySelector('h2 a, h3 a');
+      const title = post.querySelector('.wp-block-post-title a')
+                   || post.querySelector('.wp-block-post-title')
+                   || post.querySelector('h2 a, h3 a');
 
       // Extract excerpt
-      const excerpt = post.querySelector('.wp-block-post-excerpt p') ||
-                     post.querySelector('.wp-block-post-excerpt');
+      const excerpt = post.querySelector('.wp-block-post-excerpt p')
+                     || post.querySelector('.wp-block-post-excerpt');
 
       // Build card row
       const imageCell = [];
@@ -120,12 +116,11 @@ export default function parse(element, { document }) {
 
       cells.push([imageCell, contentCell]);
     });
-  }
-  // Fallback for generic card patterns
-  else {
+  } else {
+    // Fallback for generic card patterns
     const gridItems = element.querySelectorAll('.wp-block-ainoblocks-grid-item');
 
-    gridItems.forEach(item => {
+    gridItems.forEach((item) => {
       const img = item.querySelector('img');
       const heading = item.querySelector('h2, h3, h4');
       const text = item.querySelector('p');
