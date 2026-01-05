@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-solarone",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-05T13:01:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://themes.ainoblocks.io/solarone/",
+    "originPage": "SolarOne homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-columns",
+    "imagePattern": "mixed"
+  },
+  "contentPattern": {
+    "structure": "flexible columns with text and images",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature sections with text and images",
+      "partner logo rows",
+      "side-by-side content layouts",
+      "icon + text feature strips"
+    ],
+    "notSuitableFor": [
+      "card-style grid layouts",
+      "testimonial grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/solarone/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-05T13:01:00.000Z"
+  }
+}
