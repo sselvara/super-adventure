@@ -1,0 +1,33 @@
+.columns-solarone > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-solarone img {
+  width: 100%;
+}
+
+.columns-solarone > div > div {
+  order: 1;
+}
+
+.columns-solarone > div > .columns-solarone-img-col {
+  order: 0;
+}
+
+.columns-solarone > div > .columns-solarone-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-solarone > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns-solarone > div > div {
+    flex: 1;
+    order: unset;
+  }
+}
