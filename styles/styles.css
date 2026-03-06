@@ -319,3 +319,8 @@ main .section.center > div {
   flex-direction: column;
   align-items: center;
 }
+
+/* Hide metadata block */
+.metadata {
+  display: none;
+}

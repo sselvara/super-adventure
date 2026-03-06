@@ -8,16 +8,13 @@ footer .footer > div {
   margin: auto;
   max-width: 1200px;
   padding: var(--spacing-xl) var(--spacing-s);
-}
-
-footer .footer > div > div {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-l);
+  gap: var(--spacing-m);
 }
 
 @media (width >= 600px) {
-  footer .footer > div > div {
+  footer .footer > div {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -25,22 +22,21 @@ footer .footer > div > div {
 @media (width >= 900px) {
   footer .footer > div {
     padding: var(--spacing-xxl) var(--spacing-m);
-  }
-
-  footer .footer > div > div {
     grid-template-columns: 2fr repeat(3, 1fr);
     gap: var(--spacing-xl);
   }
 }
 
-/* Logo column */
-footer .footer > div > div > div:first-child {
+/* Logo - spans full width on mobile */
+footer .footer > div > p:first-child {
   grid-column: 1 / -1;
+  margin: 0 0 var(--spacing-m) 0;
 }
 
 @media (width >= 900px) {
-  footer .footer > div > div > div:first-child {
+  footer .footer > div > p:first-child {
     grid-column: 1;
+    margin: 0;
   }
 }
 
@@ -85,14 +81,7 @@ footer .footer ul li {
   margin-bottom: var(--spacing-xs);
 }
 
-/* Horizontal rule / separator */
-footer .footer hr {
-  border: none;
-  border-top: 1px solid rgb(255 255 255 / 20%);
-  margin: var(--spacing-l) 0;
-}
-
-/* Copyright section */
+/* Copyright section - spans full width */
 /* stylelint-disable-next-line no-descending-specificity */
 footer .footer > div > div:last-child {
   grid-column: 1 / -1;
@@ -103,6 +92,7 @@ footer .footer > div > div:last-child {
   color: var(--light-color);
   padding-top: var(--spacing-l);
   border-top: 1px solid rgb(255 255 255 / 20%);
+  margin-top: var(--spacing-m);
 }
 
 @media (width >= 900px) {
