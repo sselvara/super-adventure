@@ -49,16 +49,25 @@
   object-fit: contain;
 }
 
-/* For feature columns - text | image layout */
+/* For feature columns - text | image layout (image appears first/left) */
 .columns-solarone > div > .columns-solarone-img-col {
-  order: 0;
+  order: -1;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 .columns-solarone > div > .columns-solarone-img-col img {
   display: block;
-  border-radius: var(--border-radius-m);
+  border-radius: 32px;
   width: 100%;
+  height: auto;
+}
+
+/* Override icon size for image columns with bare img in p */
+.columns-solarone > div > .columns-solarone-img-col > p:first-child img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 32px;
 }
 
 /* Heading in feature columns */
@@ -107,6 +116,7 @@
   transition: all 0.3s ease;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .columns-solarone.logos img:hover {
   filter: grayscale(0%);
   opacity: 1;

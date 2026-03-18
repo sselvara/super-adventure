@@ -2,7 +2,9 @@
   "templates": [
     {
       "name": "solarone-homepage",
-      "urls": ["https://themes.ainoblocks.io/solarone/"],
+      "urls": [
+        "https://themes.ainoblocks.io/solarone/"
+      ],
       "description": "SolarOne homepage template with hero, feature sections, testimonials, and blog cards",
       "blocks": [
         {
@@ -53,6 +55,55 @@
           "name": "cards-solarone-blog",
           "selector": ".wp-block-post-template",
           "description": "Blog post cards with image, category, title, and excerpt"
+        }
+      ]
+    },
+    {
+      "name": "about-page",
+      "urls": [
+        "https://themes.ainoblocks.io/solarone/about/"
+      ],
+      "description": "About page with page heading, company stats with image, and team members grid",
+      "blocks": [
+        {
+          "name": "columns-solarone",
+          "instances": [
+            ".wp-block-group.has-background-primary-background-color .wp-block-ainoblocks-grid-container"
+          ]
+        },
+        {
+          "name": "cards-solarone",
+          "instances": [
+            ".wp-block-group.has-variant-background-primary-background-color .wp-block-ainoblocks-grid-item:nth-child(2) .wp-block-ainoblocks-grid-container"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero & Stats",
+          "selector": ".wp-block-group.alignfull.has-background-primary-background-color.pt__13.pb__18",
+          "style": null,
+          "blocks": [
+            "columns-solarone"
+          ],
+          "defaultContent": [
+            ".wp-block-group.has-background-primary-background-color h1"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Team Grid",
+          "selector": ".wp-block-group.alignfull.has-variant-background-primary-background-color.pt__18.pb__15",
+          "style": "dark",
+          "blocks": [
+            "cards-solarone"
+          ],
+          "defaultContent": [
+            ".wp-block-group.has-variant-background-primary-background-color .wp-block-ainoblocks-grid-item:nth-child(1) p",
+            ".wp-block-group.has-variant-background-primary-background-color .wp-block-ainoblocks-grid-item:nth-child(1) h2",
+            ".wp-block-group.has-variant-background-primary-background-color .wp-block-ainoblocks-grid-item:nth-child(1) p:last-child"
+          ]
         }
       ]
     }

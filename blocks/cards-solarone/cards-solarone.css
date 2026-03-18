@@ -32,8 +32,9 @@
 
 .cards-solarone > ul > li img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
+  border-radius: 32px;
   transition: transform 0.3s ease;
 }
 
@@ -127,6 +128,30 @@
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+/* Dark section - transparent cards with white text */
+.section.dark .cards-solarone > ul > li {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.section.dark .cards-solarone > ul > li:hover {
+  box-shadow: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.dark .cards-solarone .cards-solarone-card-body h3,
+.section.dark .cards-solarone .cards-solarone-card-body h4 {
+  color: var(--background-color);
+}
+
+.section.dark .cards-solarone .cards-solarone-card-body > p:last-child {
+  color: #a0a0a3;
+}
+
+.section.dark .cards-solarone .cards-solarone-card-body {
+  padding: var(--spacing-xs) 0;
 }
 
 /* Dark section testimonials */
