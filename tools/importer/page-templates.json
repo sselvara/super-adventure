@@ -1,0 +1,111 @@
+{
+  "templates": [
+    {
+      "name": "solarone-homepage",
+      "urls": [
+        "https://themes.ainoblocks.io/solarone/"
+      ],
+      "description": "SolarOne homepage template with hero, feature sections, testimonials, and blog cards",
+      "blocks": [
+        {
+          "name": "hero-solarone",
+          "selector": ".wp-block-group.alignfull.has-background-primary-background-color > .wp-block-ainoblocks-grid-container:first-child",
+          "description": "Hero section with two-column layout: eyebrow, heading, CTA button, description, and product image"
+        },
+        {
+          "name": "columns-solarone-feature-icons",
+          "selector": ".wp-block-group.alignfull:not(.has-background) > .wp-block-ainoblocks-grid-container.pt__13",
+          "description": "Three-column feature icons strip with icon + text pairs"
+        },
+        {
+          "name": "section-video",
+          "section": true,
+          "selector": ".wp-block-group.alignfull.has-background-primary-background-color.pt__18.pb__13",
+          "description": "Video section with centered heading, paragraph, and video element"
+        },
+        {
+          "name": "columns-solarone-partners",
+          "selector": ".wp-block-group.alignfull.pb__18 > .wp-block-ainoblocks-grid-container",
+          "description": "Partner logos section with heading and 5-column logo grid"
+        },
+        {
+          "name": "section-features-grey",
+          "section": true,
+          "selector": ".wp-block-group.alignfull.has-background-secondary-background-color.pt__18:not(.pb__18)",
+          "style": "grey",
+          "description": "Grey background section for feature columns"
+        },
+        {
+          "name": "columns-solarone-feature",
+          "selector": ".wp-block-group.has-background-secondary-background-color .wp-block-ainoblocks-grid-container",
+          "description": "Two-column feature layout with text and image"
+        },
+        {
+          "name": "section-testimonials",
+          "section": true,
+          "selector": ".wp-block-group.alignfull.has-background-primary-background-color.pt__18.pb__18",
+          "description": "Testimonials section with heading and cards grid"
+        },
+        {
+          "name": "cards-solarone-testimonial",
+          "selector": ".wp-block-ainoblocks-testimonial",
+          "description": "Testimonial card with quote icon, text, avatar, and author info"
+        },
+        {
+          "name": "cards-solarone-blog",
+          "selector": ".wp-block-post-template",
+          "description": "Blog post cards with image, category, title, and excerpt"
+        }
+      ]
+    },
+    {
+      "name": "about-page",
+      "urls": [
+        "https://themes.ainoblocks.io/solarone/about/"
+      ],
+      "description": "About page with page heading, company stats with image, and team members grid",
+      "blocks": [
+        {
+          "name": "columns-solarone",
+          "instances": [
+            ".wp-block-group.has-background-primary-background-color .wp-block-ainoblocks-grid-container"
+          ]
+        },
+        {
+          "name": "cards-solarone",
+          "instances": [
+            ".wp-block-group.has-variant-background-primary-background-color .wp-block-ainoblocks-grid-item:nth-child(2) .wp-block-ainoblocks-grid-container"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero & Stats",
+          "selector": ".wp-block-group.alignfull.has-background-primary-background-color.pt__13.pb__18",
+          "style": null,
+          "blocks": [
+            "columns-solarone"
+          ],
+          "defaultContent": [
+            ".wp-block-group.has-background-primary-background-color h1"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Team Grid",
+          "selector": ".wp-block-group.alignfull.has-variant-background-primary-background-color.pt__18.pb__15",
+          "style": "dark",
+          "blocks": [
+            "cards-solarone"
+          ],
+          "defaultContent": [
+            ".wp-block-group.has-variant-background-primary-background-color .wp-block-ainoblocks-grid-item:nth-child(1) p",
+            ".wp-block-group.has-variant-background-primary-background-color .wp-block-ainoblocks-grid-item:nth-child(1) h2",
+            ".wp-block-group.has-variant-background-primary-background-color .wp-block-ainoblocks-grid-item:nth-child(1) p:last-child"
+          ]
+        }
+      ]
+    }
+  ]
+}

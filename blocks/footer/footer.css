@@ -1,20 +1,113 @@
+/* Footer styles */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--dark-color);
+  color: var(--background-color);
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: var(--spacing-xl) var(--spacing-s);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
 }
 
-footer .footer p {
-  margin: 0;
+@media (width >= 600px) {
+  footer .footer > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: var(--spacing-xxl) var(--spacing-m);
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: var(--spacing-xl);
   }
+}
+
+/* Logo - spans full width on mobile */
+footer .footer > div > p:first-child {
+  grid-column: 1 / -1;
+  margin: 0 0 var(--spacing-m) 0;
+}
+
+@media (width >= 900px) {
+  footer .footer > div > p:first-child {
+    grid-column: 1;
+    margin: 0;
+  }
+}
+
+footer .footer img {
+  max-width: 140px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* Footer headings */
+footer .footer h3 {
+  color: var(--background-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-s) 0;
+}
+
+/* Footer links */
+footer .footer p {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: var(--body-font-size-s);
+}
+
+footer .footer a {
+  color: var(--light-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer .footer a:hover {
+  color: var(--background-color);
+}
+
+/* Footer lists */
+footer .footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer ul li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Copyright section - spans full width */
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer > div > div:last-child {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-size: var(--body-font-size-xs);
+  color: var(--light-color);
+  padding-top: var(--spacing-l);
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  margin-top: var(--spacing-m);
+}
+
+@media (width >= 900px) {
+  footer .footer > div > div:last-child {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+footer .footer > div > div:last-child p {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+}
+
+footer .footer > div > div:last-child strong {
+  color: var(--background-color);
 }

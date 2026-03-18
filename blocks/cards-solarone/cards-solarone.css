@@ -1,0 +1,171 @@
+/* Cards SolarOne Block Styles */
+.cards-solarone {
+  padding: var(--spacing-l) 0;
+}
+
+.cards-solarone > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-m);
+}
+
+.cards-solarone > ul > li {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-m);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards-solarone > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 10%);
+}
+
+/* Card image */
+.cards-solarone .cards-solarone-card-image {
+  line-height: 0;
+  overflow: hidden;
+}
+
+.cards-solarone > ul > li img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 32px;
+  transition: transform 0.3s ease;
+}
+
+.cards-solarone > ul > li:hover img {
+  transform: scale(1.05);
+}
+
+/* Card body */
+.cards-solarone .cards-solarone-card-body {
+  padding: var(--spacing-s);
+}
+
+/* Category tag */
+.cards-solarone .cards-solarone-card-body > p:first-child {
+  color: var(--accent-color);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+/* Card title */
+.cards-solarone .cards-solarone-card-body h3,
+.cards-solarone .cards-solarone-card-body h4 {
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-xs) 0;
+  color: var(--heading-color);
+}
+
+.cards-solarone .cards-solarone-card-body h3 a,
+.cards-solarone .cards-solarone-card-body h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-solarone .cards-solarone-card-body h3 a:hover,
+.cards-solarone .cards-solarone-card-body h4 a:hover {
+  color: var(--accent-color);
+}
+
+/* Card excerpt/description */
+.cards-solarone .cards-solarone-card-body > p:last-child {
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Testimonial cards variant */
+.cards-solarone.testimonials > ul {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.cards-solarone.testimonials > ul > li {
+  background-color: var(--background-color);
+  padding: var(--spacing-m);
+  border-radius: var(--border-radius-m);
+}
+
+.cards-solarone.testimonials > ul > li:hover {
+  transform: none;
+}
+
+/* Quote icon */
+.cards-solarone.testimonials .cards-solarone-card-body > p:first-child img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--spacing-s);
+}
+
+/* Testimonial text */
+.cards-solarone.testimonials .cards-solarone-card-body > p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-m) 0;
+}
+
+/* Author info */
+.cards-solarone.testimonials .cards-solarone-card-body > p:last-child {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--body-font-size-s);
+}
+
+.cards-solarone.testimonials .cards-solarone-card-body > p:last-child img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Dark section - transparent cards with white text */
+.section.dark .cards-solarone > ul > li {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.section.dark .cards-solarone > ul > li:hover {
+  box-shadow: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.section.dark .cards-solarone .cards-solarone-card-body h3,
+.section.dark .cards-solarone .cards-solarone-card-body h4 {
+  color: var(--background-color);
+}
+
+.section.dark .cards-solarone .cards-solarone-card-body > p:last-child {
+  color: #a0a0a3;
+}
+
+.section.dark .cards-solarone .cards-solarone-card-body {
+  padding: var(--spacing-xs) 0;
+}
+
+/* Dark section testimonials */
+.section.dark .cards-solarone.testimonials > ul > li {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .cards-solarone {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .cards-solarone > ul {
+    gap: var(--spacing-l);
+  }
+}

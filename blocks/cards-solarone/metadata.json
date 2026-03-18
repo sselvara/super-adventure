@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-solarone",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-01-05T13:01:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://themes.ainoblocks.io/solarone/",
+    "originPage": "SolarOne homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "content-cards",
+    "imagePattern": "card-images"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description per card",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "testimonial grids",
+      "blog post listings",
+      "feature card grids",
+      "team member displays"
+    ],
+    "notSuitableFor": [
+      "simple text lists",
+      "side-by-side layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/solarone/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-05T13:01:00.000Z"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://themes.ainoblocks.io/solarone/about/",
+  "path": "solarone/about",
+  "timestamp": "2026-03-06T12:06:41.677Z",
+  "title": "About – SolarOne",
+  "template": "about-page",
+  "blocks": [
+    "columns-solarone",
+    "cards-solarone"
+  ]
+}
